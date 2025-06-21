@@ -23,8 +23,10 @@ services:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: ${MYSQL_USER}
       WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
+      MSMTP_CONFIG: /etc/msmtp/msmtprc
     depends_on:
       - db
+      - mailhog
 
   db:
     image: mariadb:10.3.27
